@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2>Add Your Burger Here</h2>
+            <div class="form-group">
+                <form>
+                    <label for="usr">Burger Name:</label>
+                    <input type="text" class="form-control" id="myBurger">
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="yes">Yes</label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="no">No</label>
+                    </div>
+                    <button class="btn btn-success" type="submit" id="submitBurger">Insert New Burger</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+
+            {{#each burgerEd}}
+            <div name="{{id}}">
+                <h3>{{id}}) {{burger_name}}</h3>
+                <h4>{{devoured}}</h4>
+
+                <button type="button" class="devourMe" name="{{id}}">Devoured?</button>
+            </div>
+            <br> 
+            {{/each}}
+        </div>
+        <div class="col-md-6">
+            <div id="insertDevouredHere"></div>
+
+        </div>
+    </div>
+</div>

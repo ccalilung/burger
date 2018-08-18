@@ -17,7 +17,7 @@ router.get("/", function (req, res) {
 })
 
 router.post("/api/burgers", function (req, res) {
-    // console.log(req.body)
+
     burger.insert("burgers", ["burger_name","devoured"], [req.body.burgerName,0], function (response) {
 
     })
@@ -26,7 +26,7 @@ router.post("/api/burgers", function (req, res) {
 
 
 router.post("/api/update_devoured", function (req, res) {
-    // console.log(req.body)
+    
     burger.update("burgers", "devoured", 1, "burger_name", req.body.burgerName)
 
     res.redirect("/")

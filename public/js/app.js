@@ -4,7 +4,6 @@ $("#submitBurger").on("click",function(){
     
     var obj = {
         burgerName: $("#myBurger").val().trim(),
-        // devoured: $("#devoured").val().trim()
     }
     
     $.ajax("/api/burgers", { 
@@ -19,7 +18,21 @@ $("#submitBurger").on("click",function(){
 
 })
 $(".devourMe").on("click",function(){
-   var a = (document.getElementsByName(this.name))
-   $("#insertDevouredHere").append(a)
+    var obj = {
+        burgerName: $(this).attr("id"),
+        devoured: 1,
+    }
+
+    console.log(obj)
+    $.ajax("/api/update_devoured", { 
+        type: "POST",
+        data: obj
+        }
+    ).then(function(){
+        location.reload();
+    })
+
+//    var a = (document.getElementsByName(this.name))
+//    $("#insertDevouredHere").append(a)
 })
 })

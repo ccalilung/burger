@@ -12,13 +12,11 @@ var burger = {
         orm.insertOne(tableName,column,value, function(res){
             cb(res)
         })
+    },
+    update: function(tableName, column, columnValue, whereCol, equals) {
+        orm.updateOne(tableName,column,columnValue,whereCol,equals)
     }
 }
-// Find a pet in the pets table by an animal_name of Rachel.
-// orm.updateOne("pets", "animal_name", "Rachel");
-
-// Find the buyer with the most pets.
-// orm.insertOne("buyer_name", "buyer_id", "buyers", "pets");
 
 module.exports = burger
 

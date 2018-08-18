@@ -13,7 +13,7 @@ var orm = {
     var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;";
     connection.query(queryString, [tableName, column, columnValue, whereCol, equals], function(err, result) {
       if (err) throw err;
-      console.log(result);
+      
     });
 }, insertOne: function(tableName,columns,values,cb) {
     var queryString = "INSERT INTO ?? (??) VALUES (?);";
